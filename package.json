@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon -w index.js --exec DEBUG=koa*,app* node index",
-    "start": "DEBUG=koa*,app* node index"
+    "start": "DEBUG=koa*,app* node index",
+    "test": "NODE_PATH=. ava -v --no-fail-fast test/{*,*/}*.test.js",
+    "test:watch": "yarn run test -w"
   },
   "dependencies": {
     "debug": "^4.1.0",
@@ -17,5 +19,9 @@
     "koa-router": "^7.4.0",
     "ms": "^2.1.1",
     "nodemon": "^1.18.6"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "got": "^9.3.2"
   }
 }
