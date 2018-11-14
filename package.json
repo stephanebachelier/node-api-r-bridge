@@ -1,0 +1,21 @@
+{
+  "name": "node-api-r-bridge",
+  "version": "1.0.0",
+  "description": "Node API as an R bridge",
+  "main": "index.js",
+  "repository": "https://github.com/stephanebachelier/node-api-r-bridge.git",
+  "author": "Stéphane Bachelier <stephane.bachelier@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -w index.js --exec DEBUG=koa*,app* node index",
+    "start": "DEBUG=koa*,app* node index"
+  },
+  "dependencies": {
+    "debug": "^4.1.0",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "ms": "^2.1.1",
+    "nodemon": "^1.18.6"
+  }
+}
