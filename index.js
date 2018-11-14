@@ -4,6 +4,7 @@ const bodyParser = require('koa-bodyparser')
 const ms = require('ms')
 
 const debug = require('debug')
+const { host, port } = require('./options')
 
 const logError = debug('app:error')
 const log = debug('app:log')
@@ -42,9 +43,6 @@ app
   .use(router.allowedMethods({
     throw: true
   }))
-
-const port = process.env.PORT || 5000
-const host = process.env.HOST || '127.0.0.1'
 
 app.listen({ port, host }, () => {
   log('Server bound on %s:%d', host, port)
