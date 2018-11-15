@@ -25,6 +25,12 @@ router.get('/r/foo/sync/:input/:times', ctx => {
   ctx.body = bridge.foo(input, times)
 })
 
+router.get('/r/bar/async/:input/:times', async ctx => {
+  const { input, times } = ctx.params
+
+  ctx.body = await bridge.bar(input, times)
+})
+
 const error = async (ctx, next) => {
   try {
     await next()
