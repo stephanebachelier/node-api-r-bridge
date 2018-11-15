@@ -9,8 +9,14 @@ const { host, port } = require('./options')
 const logError = debug('app:error')
 const log = debug('app:log')
 
+const bridge = require('./r-bridge')
+
 router.get('/status', ctx => {
   ctx.body = 'ok'
+})
+
+router.get('/r/hello/sync', ctx => {
+  ctx.body = bridge.foo()
 })
 
 const error = async (ctx, next) => {
