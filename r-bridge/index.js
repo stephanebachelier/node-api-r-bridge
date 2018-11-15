@@ -12,15 +12,17 @@ const asyncRcall = fn => {
   })
 }
 
+const rFile = path => `${process.cwd()}/${path}`
+
 module.exports = {
   foo: (name = 'hello world', times = 20) =>
-    R('r/sync.R')
+    R(rFile('r/sync.R'))
       .data(name, times)
       .callSync(),
 
   bar: (name = 'hello world', times = 20) => {
     return new Promise((resolve, reject) => {
-      R('r/sync.R')
+      R(rFile('r/sync.R'))
         .data(name, times)
         .call((err, data) => {
           if (err) {
@@ -33,5 +35,5 @@ module.exports = {
   },
 
   baz: (name = 'hello world', times = 20) =>
-    asyncRcall(() => R('r/sync.R').data(name, times))
+    asyncRcall(() => R(rFile('r/sync.R')).data(name, times))
 }
