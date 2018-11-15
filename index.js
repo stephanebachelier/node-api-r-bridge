@@ -40,6 +40,12 @@ router.get('/r/bad/sync', async ctx => {
   ctx.body = await bridge.bad()
 })
 
+router.get('/r/json/:keyword', async ctx => {
+  const { keyword } = ctx.params
+
+  ctx.body = await bridge.json(keyword)
+})
+
 const error = async (ctx, next) => {
   try {
     await next()
