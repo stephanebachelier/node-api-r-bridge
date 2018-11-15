@@ -33,5 +33,11 @@ module.exports = {
   },
 
   baz: (name = 'hello world', times = 20) =>
-    asyncRcall(() => R('r/sync.R').data(name, times))
+    asyncRcall(() => R('r/sync.R').data(name, times)),
+
+  bad: () =>
+    // will throw
+    new Promise((resolve, reject) => {
+      R('r/throw.R').callSync()
+    })
 }
