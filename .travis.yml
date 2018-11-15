@@ -1,1 +1,19 @@
-language: node_js
+
+matrix:
+  include:
+    - language: r
+      cache: packages
+
+      before_install:
+        - curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
+
+      install:
+        - ./run.sh install_aptget r-cran-jsonlite r-cran-magrittr r-cran-dplyr
+
+    - language: node_js
+      env:
+        HOST: 127.0.0.1
+        PORT: 5000
+      script:
+        - yarn start &
+        - yarn test
