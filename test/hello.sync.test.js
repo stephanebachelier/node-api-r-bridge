@@ -3,14 +3,7 @@ const got = require('got')
 
 const { baseUrl } = require('../options')
 
-const getLetters = string => {
-  const letters = []
-  for (let i in string) {
-    letters.push(string[i])
-  }
-
-  return letters.sort().join()
-}
+const getLetters = require('./helpers/letters')
 
 const DEFAULT_INPUT = 'hello world'
 const ITERATIONS = 20
