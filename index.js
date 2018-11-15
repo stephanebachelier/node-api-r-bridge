@@ -19,6 +19,12 @@ router.get('/r/hello/sync', ctx => {
   ctx.body = bridge.foo()
 })
 
+router.get('/r/foo/sync/:input/:times', ctx => {
+  const { input, times } = ctx.params
+
+  ctx.body = bridge.foo(input, times)
+})
+
 const error = async (ctx, next) => {
   try {
     await next()
