@@ -36,12 +36,16 @@ router.get('/r/baz/async/:input/:times', async ctx => {
   ctx.body = await bridge.baz(input, times)
 })
 
+router.get('/r/bad/sync', async ctx => {
+  ctx.body = await bridge.bad()
+})
+
 const error = async (ctx, next) => {
   try {
     await next()
   } catch ({ message }) {
     ctx.status = 500
-    ctx.body = message
+    ctx.body = { message }
 
     logError('error %s', message)
   }
