@@ -19,7 +19,7 @@
     "koa-router": "^7.4.0",
     "ms": "^2.1.1",
     "nodemon": "^1.18.6",
-    "r-script": "^0.0.3"
+    "r-script": "https://github.com/joshkatz/r-script.git#master"
   },
   "devDependencies": {
     "ava": "^0.25.0",

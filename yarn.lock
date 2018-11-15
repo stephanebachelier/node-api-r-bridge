@@ -2859,9 +2859,9 @@ qs@^6.5.2:
   version "6.5.2"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
-r-script@^0.0.3:
+"r-script@https://github.com/joshkatz/r-script.git#master":
   version "0.0.3"
-  resolved "https://registry.npmjs.org/r-script/-/r-script-0.0.3.tgz#454ae9f366edf071a4867d3bb65c93c1a78bc421"
+  resolved "https://github.com/joshkatz/r-script.git#b5038b069a58be8411c927962bf5e6198b4a7fad"
   dependencies:
     underscore "^1.8.3"
 
